@@ -1,1 +1,31 @@
 // Find the missing number in an array
+
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the size of the array : ");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        
+        // Insert the elements in the array--------------
+        
+        for(int i = 0; i < n; i++)
+        {
+            System.out.print("Enter the value " + i + " in the array : ");
+            arr[i] = sc.nextInt();
+        }
+        int m = n + 1;
+        
+        // Finding the missing number--------------
+        
+        int total = (m*(m+1))/2;
+        for(int i = 0; i < n; i++)
+        {
+            total = total - arr[i];
+        }
+        System.out.println("The missing number is: " + total);
+    }
+}
