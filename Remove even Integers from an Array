@@ -1,0 +1,42 @@
+Remove Even Integers from an Array . . . !
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the size of the array : ");
+        int n = sc.nextInt();
+        int[] arr1 = new int[n];
+        
+        System.out.println("Enter elements into the array:");
+        for(int i = 0; i < n; i++) {
+            System.out.println("Enter the Element " + i + " in the array");
+            arr1[i] = sc.nextInt();
+        }
+        
+        System.out.println("The array you entered is : ");
+        for(int i = 0; i < n; i++) {
+            System.out.println(arr1[i]);
+        }
+        
+        // Remove even elements from the array
+        ArrayList<Integer> newArrList = new ArrayList<>();
+        for(int i = 0; i < n; i++) {
+            if(arr1[i] % 2 != 0) {
+                newArrList.add(arr1[i]);
+            }
+        }
+        
+        // Convert ArrayList back to array
+        int[] newArr = new int[newArrList.size()];
+        for(int i = 0; i < newArrList.size(); i++) {
+            newArr[i] = newArrList.get(i);
+        }
+        
+        System.out.println("The array after removing even elements is : ");
+        for(int i = 0; i < newArr.length; i++) {
+            System.out.println(newArr[i]);
+        }
+    }
+}
