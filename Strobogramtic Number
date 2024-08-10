@@ -1,0 +1,31 @@
+Check if the given number is Strobogramtic Number or not
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        String s = Integer.toString(n);
+        StringBuilder s1 = new StringBuilder();
+
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c == '1') s1.insert(0, '1');
+            else if (c == '0') s1.insert(0, '0');
+            else if (c == '8') s1.insert(0, '8');
+            else if (c == '6') s1.insert(0, '9');
+            else if (c == '9') s1.insert(0, '6');
+            else {
+                System.out.print("Not a strobogrammatic number");
+                return;
+            }
+        }
+
+        if (s1.toString().equals(s)) {
+            System.out.print("Strobogrammatic number");
+        } else {
+            System.out.print("Not a strobogrammatic number");
+        }
+    }
+}
