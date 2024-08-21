@@ -7,7 +7,6 @@ public class Main
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
-        
         int num = sc.nextInt();
         boolean[] bool = new boolean[num];
         
@@ -15,7 +14,6 @@ public class Main
         {
             bool[i] = true;
         }
-        
         for(int i = 2; i < Math.sqrt(num); i++)
         {
             if(bool[i]==true)
@@ -26,7 +24,6 @@ public class Main
                 }
             }
         }
-        
         for(int i = 2; i < bool.length; i++)
         {
             if(bool[i]==true)
